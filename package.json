@@ -1,24 +1,30 @@
 {
-  "name": "ctweek1day4",
+  "name": "ctweek1day3",
   "version": "1.0.0",
-  "description": "http static server",
+  "description": "Http things?",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node index.js",
+    "start:watch": "nodemon index.js",
+    "test": "jest --verbose --runInBand",
+    "test:watch": "npm run test -- --watch"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/noah-puckett/ctweek1day4.git"
+    "url": "git+https://github.com/noah-puckett/ctweek1day3.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/noah-puckett/ctweek1day4/issues"
+    "url": "https://github.com/noah-puckett/ctweek1day3/issues"
   },
-  "homepage": "https://github.com/noah-puckett/ctweek1day4#readme",
+  "homepage": "https://github.com/noah-puckett/ctweek1day3#readme",
   "devDependencies": {
     "eslint": "^6.0.1",
-    "jest": "^24.8.0"
-  }
+    "jest": "^24.8.0",
+    "nodemon": "^1.19.1",
+    "supertest": "^4.0.2"
+  },
+  "dependencies": {}
 }
