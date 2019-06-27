@@ -5,9 +5,14 @@ const server = createServer(sock => {
     // sock.write('I will echo');
     // // sock.end()
 
+    //use the STRING method SPLIT to turn the RETURNED DATA STRING into an ARRAY 
+    //("splitting" elements apart on every new line), then store that in a VARIABLE
+    //SPLIT the first element in the array by SPACES, the first (0) element in THAT array is 'GET', 
+    //the second (1) element is "/", which we store in a VARIABLE
     sock.on('data', data => {
-        console.log('from client side', data.toString());
-        // sock.write(data.toString());
+        const dataArray = data.toString().split('\n');
+        const method = dataArray[0].split(' ')[0];
+        const path = dataArray[0].split(' ')[1];
     });
 });
 
