@@ -1,4 +1,5 @@
 const { createServer } = require('net');
+const { makeHTTPPacket } = require('./lib/utils/makeHTTPPacket');
 
 const server = createServer(sock => {
     console.log('Server has uhhhh been started? I think?');
