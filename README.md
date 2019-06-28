@@ -9,8 +9,8 @@ NET to HTTP server
 <!-- 1. I don't think I need a client I think I _am_ the client, it's the browser
     1. COMMIT -->
 
-1. Create http packet uhhhh template?
-    1. COMMIT
+<!-- 1. Create http packet uhhhh template?
+    1. COMMIT -->
 
 <!-- 1. Import net... module?
     1. COMMIT -->
@@ -25,6 +25,18 @@ NET to HTTP server
     1. COMMIT -->
 
 1. Create html pages to serve up
+    1. COMMIT
+
+1. Loop through files and check them against the request path
+    .1 COMMIT
+
+1. Introduce conditional logic: if loop returns a file matching the path, send that file.
+    1. COMMIT
+
+1. Handle bad path request: if loop does NOT return a file matching the request path, return 404
+    1. COMMIT
+
+1. Handle bad method: if POST, deny
     1. COMMIT
 
 1. Make a JSON dog file????

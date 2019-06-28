@@ -13,13 +13,20 @@ const server = createServer(sock => {
     //the second (1) element is "/", which we store in a VARIABLE
     sock.on('data', data => {
         
-        const parsedData = parseData(data); 
+        // const parsedData = parseData(data); 
 
-        console.log(parsedData);
+        // console.log(parsedData);
 
-        sock.write(parsedData => {
-            makeHTTPPacket(parsedData);
-        });
+        // sock.write(parsedData => {
+        //     //if(parsedData.path === 404, do this | 200)
+        //     makeHTTPPacket(parsedData, status);
+        // });
+
+        const dataArray = data.toString().split('\n');
+        const method = dataArray[0].split(' ')[0];
+        const path = dataArray[0].split(' ')[1];
+        const contentLength = Buffer.from(dataArray).length;
+        console.log(method, path, contentLength);
     });
 });
 
