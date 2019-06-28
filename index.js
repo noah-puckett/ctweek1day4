@@ -1,35 +1,42 @@
 const { createServer } = require('net');
-const { makeHTTPPacket } = require('./lib/utils/makeHTTPPacket');
+const { createResponse } = require('./lib/utils/makeHTTPPacket');
 const { parseData } = require('./lib/utils/parseData');
+
+const contentType = {
+    json: 'application/json',
+    html: 'text/html'
+};
+
+const index = `<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h1>YOU HAVE SUCCEEDED</h1>
+</body>
+</html>`;
 
 const server = createServer(sock => {
     console.log('Server has uhhhh been started? I think?');
-    // sock.write('I will echo');
-    // // sock.end()
 
-    //use the STRING method SPLIT to turn the RETURNED DATA STRING into an ARRAY 
-    //("splitting" elements apart on every new line), then store that in a VARIABLE
-    //SPLIT the first element in the array by SPACES, the first (0) element in THAT array is 'GET', 
-    //the second (1) element is "/", which we store in a VARIABLE
     sock.on('data', data => {
         
-        // const parsedData = parseData(data); 
+        const parsedData = parseData(data); 
 
-        // console.log(parsedData);
-
-        // sock.write(parsedData => {
-        //     //if(parsedData.path === 404, do this | 200)
-        //     makeHTTPPacket(parsedData, status);
-        // });
-
-        const dataArray = data.toString().split('\n');
-        const method = dataArray[0].split(' ')[0];
-        const path = dataArray[0].split(' ')[1];
-        const contentLength = Buffer.from(dataArray).length;
-        console.log(method, path, contentLength);
+        if(parsedData.path === '/') {
+            const response = createResponse('200 OK', index, contentType.html);
+            sock.write(response);
+            sock.end();
+        }
+        else {
+            console.log('SOMETHING IS ROTTEN IN DENMARK');
+        }
     });
 });
 
 server.listen(8000, () => {
-    // res.end()
 });

@@ -30,8 +30,8 @@ NET to HTTP server
 1. Loop through files and check them against the request path
     .1 COMMIT
 
-1. Introduce conditional logic: if loop returns a file matching the path, send that file.
-    1. COMMIT
+<!-- 1. Introduce conditional logic: if loop returns a file matching the path, send that file.
+    1. COMMIT -->
 
 1. Handle bad path request: if loop does NOT return a file matching the request path, return 404
     1. COMMIT
@@ -48,5 +48,5 @@ NET to HTTP server
 1. Create tests! 
     1. COMMIT
 
-1. Import necessary lib/mods: fs, net, ??
-    1. COMMIT
+<!-- 1. Import necessary lib/mods: fs, net, ??
+    1. COMMIT -->
