@@ -38,6 +38,19 @@ const sitesArray = {
     </body>
     </html>`,
 
+    green: `<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Document</title>
+    </head>
+    <body>
+        <h1>GREEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEN</h1>
+    </body>
+    </html>`,
+
     dog: {
         name: 'PRECIOUS BABBY',
         age: 5,
@@ -55,7 +68,7 @@ const sitesArray = {
     <body>
         <h1>Okay listen I'mma be frank with you pal, I found nothin'. Not even like, dust.</h1>
     </body>
-    </html>`
+    </html>`,
 };
 
 module.exports = { sitesArray };
