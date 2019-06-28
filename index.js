@@ -24,9 +24,8 @@ const server = createServer(sock => {
     console.log('Server has uhhhh been started? I think?');
 
     sock.on('data', data => {
-        
         const parsedData = parseData(data); 
-
+        console.log(parsedData);
         if(parsedData.path === '/') {
             const response = createResponse('200 OK', index, contentType.html);
             sock.write(response);
