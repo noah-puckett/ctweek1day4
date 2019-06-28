@@ -4,7 +4,6 @@ describe('parse data function',  () => {
 
     it('takes unparsed data and returns correctly formatted data', () => {
 
-
         const data = `GET / HTTP/1.1
 Host: localhost:8000
 Connection: keep-alive
@@ -25,5 +24,4 @@ Accept-Language: en-US,en;q=0.9`;
 
         expect(result).toEqual(expected);
     });
-
 });

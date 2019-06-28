@@ -1,5 +1,5 @@
 const { createServer } = require('net');
-const { createResponse } = require('./lib/utils/makeHTTPPacket');
+const { createResponse } = require('./lib/utils/createResponse');
 const { parseData } = require('./lib/utils/parseData');
 const { sitesArray } = require('./public/public');
 
@@ -12,7 +12,7 @@ const server = createServer(sock => {
     console.log('Server has been started');
 
     sock.on('data', data => {
-        
+
         const parsedData = parseData(data); 
 
         if(parsedData.path === '/') {
