@@ -18,11 +18,11 @@ NET to HTTP server
 <!-- 1. Read the incoming packet 
 1. COMMIT -->
 
-1. Parse incoming packet into variables
-    1. COMMIT
+<!-- 1. Parse incoming packet into variables
+    1. COMMIT -->
 
-1. Buffer.from(html).length to get content length
-    1. COMMIT
+<!-- 1. Buffer.from(html).length to get content length
+    1. COMMIT -->
 
 1. Create html pages to serve up
     1. COMMIT

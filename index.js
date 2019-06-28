@@ -1,5 +1,6 @@
 const { createServer } = require('net');
 const { makeHTTPPacket } = require('./lib/utils/makeHTTPPacket');
+const { parseData } = require('./lib/utils/parseData');
 
 const server = createServer(sock => {
     console.log('Server has uhhhh been started? I think?');
@@ -11,9 +12,14 @@ const server = createServer(sock => {
     //SPLIT the first element in the array by SPACES, the first (0) element in THAT array is 'GET', 
     //the second (1) element is "/", which we store in a VARIABLE
     sock.on('data', data => {
-        const dataArray = data.toString().split('\n');
-        const method = dataArray[0].split(' ')[0];
-        const path = dataArray[0].split(' ')[1];
+        
+        const parsedData = parseData(data); 
+
+        console.log(parsedData);
+
+        sock.write(parsedData => {
+            makeHTTPPacket(parsedData);
+        });
     });
 });
 
